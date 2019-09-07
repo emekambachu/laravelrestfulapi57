@@ -16,3 +16,19 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Get all Countries
+Route::get('country', 'CountryController@country');
+
+// Get country by Id
+Route::get('country/{id}', 'CountryController@countryById');
+
+// Save Country
+Route::post('country', 'CountryController@saveCountry');
+
+// Update Country
+Route::put('country/{id}', 'CountryController@updateCountry');
+
+// Delete Country
+Route::delete('country/{id}', 'CountryController@deleteCountry');
+
