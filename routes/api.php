@@ -32,6 +32,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //// Delete Country
 //Route::delete('country/{id}', 'CountryController@deleteCountry');
 
-// API Resource Controller
-Route::apiResource('country', 'RCountryController');
+
+Route::group(['middleware' => 'auth:api'], function(){
+
+    // API Resource Controller
+    Route::apiResource('country', 'RCountryController');
+
+});
 

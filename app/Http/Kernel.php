@@ -50,7 +50,7 @@ class Kernel extends HttpKernel
             // add class for AuthKey middleware usage above
             // AuthKey::class,
 
-            AuthBasic::class,
+            // AuthBasic::class,
 
             ],
     ];
