@@ -2,6 +2,12 @@
 
 namespace App\Http;
 
+// add for auth key middleware api
+use App\Http\Middleware\AuthKey;
+
+// add for auth basic middleware api
+use App\Http\Middleware\AuthBasic;
+
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -40,7 +46,13 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:60,1',
             'bindings',
-        ],
+
+            // add class for AuthKey middleware usage above
+            // AuthKey::class,
+
+            AuthBasic::class,
+
+            ],
     ];
 
     /**
